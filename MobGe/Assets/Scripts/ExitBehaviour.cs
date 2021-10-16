@@ -10,27 +10,22 @@ public class ExitBehaviour : MonoBehaviour
         
         if (collision.gameObject.GetComponent<Car>().TargetPoint == this && collision.gameObject.GetComponent<Car>().IsPlayerCar)
         {
-            collision.gameObject.GetComponent<Car>().IsReachedTarget = true;
+
             // player reached target
             // reset all cars and froze time
-            Debug.Log("asd "+ collision.gameObject.GetComponent<Car>().IsPlayerCar);
-            collision.gameObject.GetComponent<CarBehaviour>().ResetTheCar();
+            Car car = collision.gameObject.GetComponent<Car>();
+
+
+            GameManager.instance.Progress(car);
+            GameManager.instance.TimeFrozen = true;
         }
         else if (collision.gameObject.GetComponent<Car>().TargetPoint == this && !collision.gameObject.GetComponent<Car>().IsPlayerCar)
         {
             //if previous car reached wait 3 seconds and reset
-            Debug.Log("about to reset");
-            StartCoroutine(waitBeforeProgressRoutine());
+            if(!GameManager.instance.CR_running)
+                GameManager.instance.ResetWithDelay();
         }
     }
 
-    public IEnumerator waitBeforeProgressRoutine()
-    {
-
-        Debug.Log("waiting before reset");
-        yield return new WaitForSecondsRealtime( GameManager.instance.secondsBeforeAutoCarArrivalReset );
-        //reset this session
-        Debug.Log("reset session");
-    }
   
 }

@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 4859012162073715738}
   - component: {fileID: 4859012162073715739}
   - component: {fileID: 4859012162073715736}
-  - component: {fileID: 4859012162073715732}
-  - component: {fileID: 5190799114431490461}
+  - component: {fileID: -1029123382803994615}
   - component: {fileID: 489254231425541275}
   m_Layer: 0
   m_Name: Car
@@ -98,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4859012162073715732
+--- !u!114 &-1029123382803994615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,30 +106,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4859012162073715737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035e00fd9735dc7468ba449731ac765f, type: 3}
+  m_Script: {fileID: 11500000, guid: ed3a3b712c6b1a34aa461ffdd5305ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 0}
   TargetPoint: {fileID: 0}
   IsPlayerCar: 0
   IsReachedTarget: 0
-  MoveForwardSpeed: 6.5
---- !u!114 &5190799114431490461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859012162073715737}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3b6a203152c5ed4d991856c7e4e1c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoint: {fileID: 0}
-  TargetPoint: {fileID: 0}
-  IsPlayerCar: 0
-  IsReachedTarget: 0
+  SavedPositions: []
+  SavedQuaternions: []
+  MoveForwardSpeed: 3
 --- !u!54 &489254231425541275
 Rigidbody:
   m_ObjectHideFlags: 0
