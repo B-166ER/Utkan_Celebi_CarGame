@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public void Progress(Car c)
     {
         CarSpawnerManager.instance.ResetAllAutoCar();
+        StopTheResetRoutine();
         if (CarSpawnerManager.instance.GetCarCount() < SessionSize)
         {
             CarSpawnerManager.instance.SpawnNewPlayerCar();
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     public void ResetSession()
     {
         CarSpawnerManager.instance.ResetPositionOfCars();
+        StopTheResetRoutine();
         TimeFrozen = true;
     }
 
@@ -50,12 +52,16 @@ public class GameManager : MonoBehaviour
     Coroutine cr;
     public void ResetWithDelay()
     {
-        if(!CR_running)
-            cr = StartCoroutine(WaitBeforeResetRoutine());
+        
+         if(!CR_running)
+         cr = StartCoroutine(WaitBeforeResetRoutine());
+        
     }
     public void StopTheResetRoutine()
     {
-        StopCoroutine(cr);
+        if(cr != null)
+            StopCoroutine(cr);
+        CR_running = false;
     }
 
     public IEnumerator WaitBeforeResetRoutine()
