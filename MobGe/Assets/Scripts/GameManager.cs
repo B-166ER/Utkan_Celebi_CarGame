@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         CR_running = true;
         Debug.Log("waiting before reset");
-        yield return new WaitForSecondsRealtime(GameManager.instance.secondsBeforeAutoCarArrivalReset);
+        yield return new WaitForSecondsRealtime(secondsBeforeAutoCarArrivalReset);
         //reset this session
         Debug.Log("reset session");
         CR_running = false;

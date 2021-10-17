@@ -14,7 +14,8 @@ public class Car : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.instance.ResetSession();
+        if(other.gameObject.GetComponent<Car>() != null)
+            GameManager.instance.ResetSession();
     }
 
     [Range(0f, 100f)] [SerializeField] float MoveForwardSpeed;

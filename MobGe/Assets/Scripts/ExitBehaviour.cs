@@ -21,7 +21,7 @@ public class ExitBehaviour : MonoBehaviour
         }
         else if (collision.gameObject.GetComponent<Car>().TargetPoint == this && !collision.gameObject.GetComponent<Car>().IsPlayerCar)
         {
-            //if previous car reached wait 3 seconds and reset
+            //if previous car reached wait real seconds and reset
             if(!GameManager.instance.CR_running)
                 GameManager.instance.ResetWithDelay();
         }
